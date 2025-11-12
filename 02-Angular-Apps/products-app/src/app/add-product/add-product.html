@@ -1,0 +1,20 @@
+<h3>Add Product</h3>
+<form #newProduct="ngForm" (ngSubmit)="handleSubmit(newProduct)">
+    <div class="mb-2">
+        <label for="title" class="form-label">Product Title</label>
+        <input type="text" name="title" ngModel class="form-control" placeholder="Enter product title">
+    </div>
+    <div class="mb-2">
+        <label for="category" class="form-label">Product Category</label>
+        <input type="text" name="category" ngModel class="form-control" placeholder="Enter product category">
+    </div>
+    <div class="mb-2">
+        <label for="price" class="form-label">Product Price</label>
+        <input type="text" name="price" ngModel class="form-control" placeholder="Enter product price">
+    </div>
+    <div class="mb-2">
+        <button type="submit" class="btn btn-primary">Add product</button>
+        <h3 class="text-success">{{successMessage}}</h3>
+        <h3 class="text-danger">{{errorMessage}}</h3>
+    </div>
+</form>

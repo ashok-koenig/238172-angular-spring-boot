@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product){
-        return ResponseEntity.status(HttpStatus.CREATED).body(productService.saveProduct(product));
+    public ResponseEntity<Product> createProduct(@Valid @RequestPart Product product, @RequestPart("picture") MultipartFile file){
+        return ResponseEntity.status(HttpStatus.CREATED).body(productService.createProduct(product,file));
     }
 
     @GetMapping
