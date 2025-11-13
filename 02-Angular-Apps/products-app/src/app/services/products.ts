@@ -2,12 +2,13 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { catchError, retry, throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Products {
-  apiUrl: string = 'http://localhost:8080/products'
+  apiUrl: string = environment.apiBaseUrl+'/products'
   constructor(private http: HttpClient){}
 
   getAllProducts() {

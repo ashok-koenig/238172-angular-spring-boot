@@ -1,0 +1,20 @@
+<h3>Edit Product</h3>
+<form  (ngSubmit)="handleSubmit()">
+    <div class="mb-2">
+        <label for="title" class="form-label">Product Title</label>
+        <input type="text" name="title" [(ngModel)]="product.title" class="form-control" placeholder="Enter product title">
+    </div>
+    <div class="mb-2">
+        <label for="category" class="form-label">Product Category</label>
+        <input type="text" name="category" [(ngModel)]="product.category" class="form-control" placeholder="Enter product category">
+    </div>
+    <div class="mb-2">
+        <label for="price" class="form-label">Product Price</label>
+        <input type="text" name="price" [(ngModel)]="product.price" class="form-control" placeholder="Enter product price">
+    </div>
+    <div class="mb-2">
+        <button type="submit" class="btn btn-primary">Update product</button>
+         <h3 class="text-success">{{successMessage}}</h3>
+        <h3 class="text-danger">{{errorMessage}}</h3>
+    </div>
+</form>
